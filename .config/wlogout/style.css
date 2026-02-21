@@ -1,0 +1,32 @@
+/* Fullscreen background - Dark Eclipse tint */
+window {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Base button style */
+button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #450000; /* Dark blood border */
+    border-radius: 15px;
+    margin: 15px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect - Crimson Glow */
+button:focus, button:active, button:hover {
+    background-color: #DC143C; /* Crimson Red */
+    border-color: #FFFFFF;
+    outline-style: none;
+}
+
+/* Icons - Linking to standard system icons */
+#lock { background-image: image(url("/usr/share/wlogout/icons/lock.png")); }
+#logout { background-image: image(url("/usr/share/wlogout/icons/logout.png")); }
+#reboot { background-image: image(url("/usr/share/wlogout/icons/reboot.png")); }
+#shutdown { background-image: image(url("/usr/share/wlogout/icons/shutdown.png")); }

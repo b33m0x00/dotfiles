@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/launcher", "backlight", "wireplumber"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["network", "cpu", "memory", "battery", "clock"],
+    
+    "wireplumber": {
+        "tooltip": false,
+        "scroll-step": 5,
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 {volume}%",
+        "on-click": "kitty -- alsamixer -V all",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+
+    "network": {
+        "tooltip": false,
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀",
+        "on-click": "kitty -- nmtui"
+    },
+
+    "backlight": {
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
+    },
+
+    "battery": {
+        "states": {
+            "full": 100,
+            "good": 95,
+            "decent": 50,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-time": "{H} h {M} min",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%m-%d-%Y}"
+    },
+
+    "cpu": {
+        "interval": 15,
+        "format": "  {}%",
+        "max-length": 10,
+        "on-click": "kitty -- btop"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "max-length": 10
+    },
+
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+
+    "sway/workspaces": { // CHANGED: Fixed for Sway
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "  ",
+            "2": "  ",
+            "3": " 󰈹 ",
+            "4": "4: MISC",
+            "5": "5: MISC",
+            "6": "6: MISC",
+            "7": " 󰓇 ",
+            "8": "  ",
+            "9": " 󰖂 "
+        }
+    }
+}
